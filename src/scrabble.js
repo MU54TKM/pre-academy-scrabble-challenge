@@ -1,8 +1,5 @@
 class Scrabble {
-
-  score() {
-    // Write your implementation here
-  }
+  score() {}
 }
 
 export default Scrabble;

@@ -22,32 +22,10 @@ class Scrabble {
     for (let i = 0; i < this.word.length; i++) {
       for (const letters in letterValues) {
         if (letters.includes(this.word[i].toUpperCase())) {
-          let letterScores = letterValues[letters];
-          if (
-            i + 1 < this.word.length &&
-            this.word[i + 1].toUpperCase() === this.word[i].toUpperCase()
-          ) {
-            //Double letter
-            letterScores *= 2;
-          }
-          if (
-            i + 2 < this.word.length &&
-            this.word[i + 2].toUpperCase() === this.word[i].toUpperCase()
-          ) {
-            //Triple letter
-            letterScores *= 3;
-          }
-          score += letterScores;
+          score += letterValues[letters];
           break;
         }
       }
-    }
-
-    //Double word or triple word
-    if (this.word.length >= 7) {
-      score * 2;
-    } else if (this.word.length >= 5) {
-      score *= 3;
     }
 
     return score;
